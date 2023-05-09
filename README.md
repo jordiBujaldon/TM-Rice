@@ -3,7 +3,7 @@
 ## Preguntes
 **1. Quants bits son necessaris per codificar tots els enters entre -1023 i +1023 (en codificació binaria natural amb bit de signe)?**<br>
 
-Per representar 1023 números en format binaris necessitem 10 bits ja que $2^{10}= 1024$. Aleshores per representar el signe positiu o negatiu hem d'afegir un bit a l'esquerra de tot sent el bit més significatiu determinant si és positiu (1) o negatiu (0).
+Per representar 1023 números en format binaris necessitem 10 bits ja que $2^{10}= 1024$. Aleshores per representar el signe positiu o negatiu hem d'afegir un bit a l'esquerra de tot sent el bit més significatiu determinant si és positiu (1) o negatiu (0).<br>
 
 **2. Calculeu el codi Rice de tots els enters N entre -1023 i +1023 amb M = 32.**<br>
 
@@ -23,4 +23,9 @@ El resultat sencer es podrà veure executant el codi que hi ha al fitxer [Main](
 518 = 1 110 00000110 | total bits = 12
 519 = 1 110 00000111 | total bits = 12
 ```
-Els números 507-519 representen un petit rang dins del -1023 i +1023
+Els números 507-519 representen un petit rang dins del -1023 i +1023.<br>
+
+**3. Per quins rangs de valors de N, el codi Rice necessita menys bits que la codificació binaria natural amb el bit de signe necessari per representar tot el rang entre -1023 i +1023? Si la majoria de dades a codificar pertanyen a aquest rang (rang d'entrada òptima), l'ús del codi Rice és recomenable (hi haurà estalvi de bits). Quin és el màxim estalvi de bits?**
+
+El resultat segueix un mateix patró tant per positius com per negatius:
+
