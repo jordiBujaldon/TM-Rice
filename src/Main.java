@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Classe principal que mostra els diferents resultats
  * de la codificació Rice
@@ -11,7 +16,7 @@ public class Main {
         System.out.println("Exercici b):");
 
         for (int i = -1023; i < 1024; i++) {
-            String result = encodeRiceWithM32(i);
+            String result = encodeRiceWithM(i, 32);
             System.out.println(i + " = " + result + " | total bits = " + result.replace(" ", "").length());
         }
 
@@ -19,12 +24,24 @@ public class Main {
         System.out.println("============================");
         System.out.println("Exercici d):");
 
-        /*
-        for (int i = -1023; i < 1024; i++) {
-            String result = encodeRiceWithM256(i);
-            System.out.println(i + " = " + result + " | total bits = " + result.replace(" ", "").length());
+        Map<Integer, Integer> values = new HashMap<>();
+        int value = 999;
+        int startRang = 1024;
+
+        for (int i = 1; i < 24; i++) {
+            int M = 0;
+            for (int j = -1023; j < 1024; j++){
+                M = (int) Math.pow(2, i);
+                String result = encodeRiceWithM(j, M);
+                if (value > result.replace(" ", "").length()) {
+                    startRang = j;
+                    value = result.replace(" ", "").length();
+                }
+            }
+            System.out.println("M: " + M + " = minim " + value + " bits, amb rang l'inici de rang negatiu " + startRang);
+            value = 999;
+            startRang = 1024;
         }
-         */
     }
 
     /**
@@ -33,10 +50,10 @@ public class Main {
      * @param N Número a codificar
      * @return El resultat en binari formatejat
      */
-    private static String encodeRiceWithM32(int N) {
+    private static String encodeRiceWithM(int N, int M) {
         StringBuilder result = new StringBuilder();
-        int Q = Math.abs(N) / 32;
-        int R = Math.abs(N) % 32;
+        int Q = Math.abs(N) / M;
+        int R = Math.abs(N) % M;
         int sign = (N > 0) ? 1 : 0;
 
         result.append(sign).append(" ");
