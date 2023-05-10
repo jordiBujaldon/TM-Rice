@@ -24,11 +24,10 @@ public class Main {
         System.out.println("============================");
         System.out.println("Exercici d):");
 
-        Map<Integer, Integer> values = new HashMap<>();
         int value = 999;
         int startRang = 1024;
 
-        for (int i = 1; i < 24; i++) {
+        for (int i = 1; i < 128; i++) {
             int M = 0;
             for (int j = -1023; j < 1024; j++){
                 M = (int) Math.pow(2, i);
