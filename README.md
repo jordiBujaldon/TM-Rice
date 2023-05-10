@@ -63,4 +63,5 @@ M: 2097152 = minim 10 bits, amb rang l'inici de rang negatiu -255
 M: 4194304 = minim 10 bits, amb rang l'inici de rang negatiu -255
 M: 8388608 = minim 10 bits, amb rang l'inici de rang negatiu -255
 ```
-Veiem que a partir del valor M de 256, els rangs més òptims es mantenen en -255 i +255. Això vol dir que la tendencia d'aquests valors és la següent:
+Veiem que a partir del valor M de 256, els rangs més òptims es mantenen en -255 i +255. Això vol dir que la tendencia d'aquests valors és la següent:<br>
+<img src="./images/rice_rang_m.jpg">
