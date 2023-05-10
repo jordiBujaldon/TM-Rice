@@ -8,10 +8,23 @@
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("Exercici b):");
+
+        for (int i = -1023; i < 1024; i++) {
+            String result = encodeRiceWithM32(i);
+            System.out.println(i + " = " + result + " | total bits = " + result.replace(" ", "").length());
+        }
+
+        System.out.println();
+        System.out.println("============================");
+        System.out.println("Exercici d):");
+
+        /*
         for (int i = -1023; i < 1024; i++) {
             String result = encodeRiceWithM256(i);
             System.out.println(i + " = " + result + " | total bits = " + result.replace(" ", "").length());
         }
+         */
     }
 
     /**
@@ -20,10 +33,10 @@ public class Main {
      * @param N Número a codificar
      * @return El resultat en binari formatejat
      */
-    private static String encodeRiceWithM256(int N) {
+    private static String encodeRiceWithM32(int N) {
         StringBuilder result = new StringBuilder();
-        int Q = Math.abs(N) / 256;
-        int R = Math.abs(N) % 256;
+        int Q = Math.abs(N) / 32;
+        int R = Math.abs(N) % 32;
         int sign = (N > 0) ? 1 : 0;
 
         result.append(sign).append(" ");
