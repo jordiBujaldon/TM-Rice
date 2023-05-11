@@ -1,5 +1,11 @@
 # Codificació Rice
 
+## Fet per 
+- Sergio Lopez
+- Jordi Bujaldon
+
+## Versió Java
+Per aquest codi s'ha utilitzat el JDK amb versió 1.8.0_372
 ## Preguntes
 **1. Quants bits son necessaris per codificar tots els enters entre -1023 i +1023 (en codificació binaria natural amb bit de signe)?**<br>
 
